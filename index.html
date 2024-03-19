@@ -13,7 +13,7 @@
 </head>
 <body>
     <section>
-        <div class="fixed top-0 w-full bottom-0">
+        <div class="relative sm:fixed top-0 w-full bottom-0 z-50">
             <div class="flex justify-center md:justify-between py-5 px-16 bg-white shadow-sm">
                 <div class=""><img src="./images/zalo.png" class="w-[70px] h-[24px]"> </div>
                 <div class="text-[15px] hidden md:block">
@@ -41,7 +41,7 @@
     </section>
 
     <section>
-        <div class="main mt-[63px] absolute top-0 w-[100%] 2xl:w-[50%] px-6 ">
+        <div class="main mt-[25px] sm:mt-[63px] relative sm:fixed top-0 w-[100%] 2xl:w-[50%] px-6">
             <div class="max-w-[912px] md:h-[320px] border m-auto mt-6 bg-white rounded-lg">
                 <div class="grid md:grid-cols-2 p-10">
                     <div class="flex flex-col gap-5">
@@ -72,11 +72,12 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
-
+    
     <section>
-        <div class="footer absolute bottom-0 w-full">
+        <div class="footer w-full relative sm:absolute bottom-0">
             <span class="block text-center p-5 text-[15px] text-[#667685]">© Copyright 2021 Zalo Group. All right Reserved.</span>
         </div>
     </section>
