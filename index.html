@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zalo</title>
+    <link rel="icon" href="./images/zalo-icon.ico">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</head>
+<body>
+    <section>
+        <div class="fixed top-0 w-full bottom-0">
+            <div class="flex justify-center md:justify-between py-5 px-16 bg-white shadow-sm">
+                <div class=""><img src="./images/zalo.png" class="w-[70px] h-[24px]"> </div>
+                <div class="text-[15px] hidden md:block">
+                    <div id="google_translate_element"></div>
+                    <div class="language flex gap-2.5">
+                        <span>Ngôn Ngữ:</span>
+                        <div class="flex items-center text-indigo-500 gap-1.5">
+                            <span class=" font-medium">Tiếng Việt</span>
+                            <ion-icon name="chevron-down-outline"></ion-icon>
+                        </div>
+                        <div class="language-item flex flex-col bg-white border rounded-lg w-32">
+                            
+                            <div class="flex items-center justify-center p-2 hover:bg-blue-200 duration-500 border-b w-full">
+                                <a class="flag_link " lang="vi" href="#">Tiếng Việt</a>
+                            </div>
+                            <div class="flex items-center justify-center p-2 gap-3 hover:bg-blue-200 duration-500">
+                                <a class="flag_link" lang="en" href="#">English</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="main mt-[63px] fixed top-0 w-[100%] 2xl:w-[50%] px-6 ">
+            <div class="max-w-[912px] md:h-[320px] border m-auto mt-6 bg-white rounded-lg">
+                <div class="grid md:grid-cols-2 p-10">
+                    <div class="flex flex-col gap-5">
+                        <div class="flex flex-col sm:flex-row gap-5">
+                            <div class="flex justify-center sm:items-start" ><img id="avatar" src="" alt="Avatar" class="w-20 rounded-full"></div>
+                            <div class="flex flex-col items-center sm:items-start">
+                                <span class="text-[24px] font-medium text-[#001a33]" id="name"></span>
+                                <span class="text-[16px] pt-[3px] text-[#33485c]">Nhóm</span>
+                                <button onClick="Url()" class="w-[240px] h-[48px] px-[12px] py-[1px] bg-[#0068ff] rounded-lg text-white font-semibold flex justify-center items-center mt-5">
+                                    <img src="./images/02.svg" class="px-2">
+                                    Tham gia nhóm
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex flex-col mt-5">
+                            <span class="text-[20px] text-[#001121] font-semibold">Mô tả nhóm</span>
+                            <span class="text-[15px] text-[#667685] mt-3" id="description"></span>
+                        </div>
+                    </div>
+
+                    <div class="w-full">
+                        <div class="qr-code w-full flex flex-col justify-end items-center mt-10 md:mt-0 md:items-end">
+                            <div class="flex flex-col justify-center items-center">
+                                <img id="qrCodeUrl" target="_blank" class="shadow-md w-[200px]">
+                                <p class="block text-center text-[#33485c] text-[12px] px-2 mt-2 md:w-[200px] leading-[16px]">Mở Zalo, bấm quét QR để quét và xem trên điện thoại</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="footer absolute bottom-0 w-full">
+            <span class="block text-center p-5 text-[15px] text-[#667685]">© Copyright 2021 Zalo Group. All right Reserved.</span>
+        </div>
+    </section>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'vn' }, 'google_translate_element');
+        }
+        var flags = document.getElementsByClassName('flag_link');
+        Array.prototype.forEach.call(flags, function (e) {
+            e.addEventListener('click', function () {
+                var lang = e.getAttribute('lang');
+                var languageSelect = document.querySelector("select.goog-te-combo");
+                languageSelect.value = lang;
+                languageSelect.dispatchEvent(new Event("change"));
+            });
+        });
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
